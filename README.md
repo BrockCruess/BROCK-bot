@@ -3,32 +3,38 @@
 <br/>
 
 ## Overview
-This bot provides comprehensive moderation and management features for Discord servers, including automated nickname filtering, attachment control, link management, channel expiry, and detailed logging capabilities.
+
+BROCK Bot provides comprehensive moderation and management features for Cardano-based Discord servers, including automated nickname filtering, file attachment filtering, advanced link filtering, channel deletion prompts for support tickets that have been closed for `n` days, and detailed event logging. Empower your moderation team to monitor your whole server from a single logs channel, and allow BROCK Bot to take on most of the workload via automated actions.
 
 <br/>
 
 ## Getting Started
 
+> [!IMPORTANT]  
+> Your server must be whitelisted to use this bot. It will leave your server immediately if it is not whitelisted. There is no payment subscription to get whitelisted. Instead you must delegate at least 500k ADA to BROCK Pool. Please contact me on Discord `@brockcardano` **before** you delegate, so that I can confirm your wallet address(es) prior to the delegation going on-chain. This helps confirm your wallet ownership.
+
+#### [Invite BROCK Bot to your server](https://discord.com/oauth2/authorize?client_id=1253779179455905882)
+
 ### Initial Setup
 
-> [!IMPORTANT]  
-> Your server must be whitelisted to use this bot. It will leave your server immediately if it is not whitelisted. There is no payment subscription to get whitelisted. Instead you must delegate at least 1 million ADA to BROCK Pool. Please contact me on Discord `@brockcardano` **before** you delegate, so that I can confirm your wallet address(es) prior to the delegation going on-chain. This helps confirm your wallet ownership.
+1. Upon joining, the bot automatically assigns bot manager permissions to all roles with administrator permissions. More bot manager roles can be added using the `/add Bot Manager Role` command.
 
-1. The bot automatically assigns bot manager permissions to roles with administrator privileges when it joins your server
+2. Bot manager roles can use all bot commands and features and are automatically added to the Ignored Roles list to be exempt from all automated moderation actions. More ignored roles can be added using the `/add Ignored Role` command.
 
-2. Bot manager roles can use all bot commands and features
+3. Use the `/settings` command to start enabling moderation features.
 
-3. Bot manager roles are automatically added to the ignored roles list (exempt from automated moderation)
+4. Use the `/view`, `/add` and `/remove` commands to customize featuresettings.
 
 <br/>
 
 ## Commands
+
 All commands use Discord's slash command system (`/command`).
 
-### Core Settings Commands
+### `/settings`
+View all features and their descriptions.
 
-#### `/settings`
-View and toggle all boolean settings through an interactive interface. Each setting has its own button to toggle on/off:
+Each setting has its own button to enable/disable:
 
 - Logs
 
@@ -50,8 +56,10 @@ View and toggle all boolean settings through an interactive interface. Each sett
 
 - Flagged Users Alert Channel
 
-#### `/toggle [setting]`
-Quickly toggle individual settings on/off. Available settings:
+### `/toggle [setting]`
+Quickly enable/disable individual features.
+
+Available settings:
 
 - Kick Blocked Nicknames
 
@@ -75,7 +83,7 @@ Quickly toggle individual settings on/off. Available settings:
 
 - Flagged Users Alert Channel
 
-#### `/view [setting]`
+### `/view [setting]`
 View current values for various settings:
 
 - Logs Channel
@@ -104,7 +112,7 @@ View current values for various settings:
 
 - Channel Expiry Days
 
-#### `/set [setting]`
+### `/set [setting]`
 Configure specific values for:
 
 - Logs Channel (select channel for bot logs)
@@ -113,7 +121,7 @@ Configure specific values for:
 
 - Channel Expiry Days
 
-#### `/add [setting]`
+### `/add [setting]`
 Add items to various lists:
 
 - Blocked Nickname
@@ -130,22 +138,20 @@ Add items to various lists:
 
 - Expired Channels Category
 
-#### `/remove [setting]`
+### `/remove [setting]`
 Remove items from the same lists as `/add`
 
-### Special Commands
-
-#### `/check_token [assetid]`
-Check if a Cardano asset ID is flagged as malicious in the scam registry.
+### `/check_token [assetid]`
+Check if a Cardano asset ID is flagged as malicious in the [public community scam registry](https://github.com/BrockCruess/Cardano-Scam-Token-Registry).
 
 <br/>
 
 ## Features
 
-### Nickname Management
+### Kick Blocked Nicknames
 When enabled:
 
-- Automatically kicks users with blocked nicknames
+- Automatically kicks users with nicknames containing blocked nicknames
 
 - Kicks users with emoji-only nicknames
 
@@ -153,18 +159,22 @@ When enabled:
 
 - Provides ban buttons in logs for quick action
 
-### Attachment Control
+- Scammers often copy the nicknames of staff members, or act as an announcement bot (often using an emoji-only nickname) to share malicious information with other members
+
+### Delete Attachments
 When enabled:
 
-- Deletes messages containing non-whitelisted file types
+- Deletes messages containing non-whitelisted file attachment types
 
 - Configurable whitelist of allowed file extensions
 
-- Optional alerts to users when attachments are deleted
+- Optional alerts to users when messages are deleted
 
-- Logs deleted attachments if logging is enabled
+- Logs deleted attachment names if logging is enabled
 
-### Link Management
+- Whitelisting media-based file extensions (.jpg, .png, .gif, etc.) and relevant file type requirements for technical support (.log files for example) allows your community to safely share media and also share relevant files with support staff while blocking malicious files from being shared
+
+### Delete Links
 When enabled:
 
 - Automatically deletes messages containing non-whitelisted URLs
@@ -175,23 +185,29 @@ When enabled:
 
 - Logs deleted links if logging is enabled
 
-### User Verification
+- Domain whitelisting is much more effective than blacklisting, as scam links change domains constantly
+
+### Kick Unverified Users
 When enabled:
 
 - Kicks users who haven't received any roles within 1 hour of joining
 
 - Logs kicked users if logging is enabled
 
+- Most scammers join many servers at once, and don't immediately verify to receive a role in each server; whereas legitimate users usually verify immediately upon joining
+
 ### Minimum Account Age
 When enabled:
 
 - Kicks new members whose accounts are younger than the specified age
 
-- Configurable minimum age in days
+- Configurable minimum account age in days
 
 - Logs kicked users if logging is enabled
 
-### Channel Expiry
+- Most brand new accounts are scammers, and when they're instantly kicked upon joining they rarely come back later
+
+### Expired Channels
 When enabled:
 
 - Monitors specified categories for inactive channels
@@ -202,7 +218,9 @@ When enabled:
 
 - Allows manual review and deletion of expired channels
 
-### Logging System
+- Great for cleaning up support ticket channels that have been closed for a configured number of days
+
+### Logs
 When enabled:
 
 - Logs deleted messages
@@ -211,48 +229,63 @@ When enabled:
 
 - Logs automated moderation actions
 
-- Logs channel deletions
+- Logs expired channel deletions
 
-- All logs sent to designated logging channel
+- All logs are sent to the configured logs channel
+
+- Use `/set Logs Channel` to define the logs channel
 
 ### Flagged Users Alert Channel
 When enabled:
 
-- Creates a dedicated channel for flagged user alerts
+- Creates a dedicated channel for flagged user alerts, restricted to bot manager roles to reduce channel clutter for regular members
 
-- Follows official announcement channel for scammer alerts
+- Follows a public feed of flagged scammer accounts
 
-- Restricted to bot manager roles
+- Every time a new scammer is flagged the feed will receive a new message with the user's information and a ban command that can be easily copied and pasted for quick action
+
+- This allows your moderation team to ban known scammers even before they join your server
 
 <br/>
 
 ## Default Settings
-The bot comes with sensible defaults:
+BROCK Bot begins with preconfigured defaults:
+
 - Blocked nicknames: "support", "announcement"
+
 - Whitelisted URLs: tenor.com, imgflip.com, twitter.com, x.com, wikipedia.org
+
 - Whitelisted file types: .png, .jpg, .jpeg, .gif, .txt, .log
+
+- Minimum account age: 30 days
+
 - Channel expiry: 7 days
+
+- All moderation features are disabled by default
 
 <br/>
 
 ## Best Practices
-- Set up a dedicated logging channel
+- Create a dedicated logging channel, only visible to moderators and admins
 
-- Review and customize blocked nicknames
+- Add blocked nicknames, including your team's nicknames
 
-- Configure whitelisted URLs and file types
+- Add whitelisted URLs and file types according to your community's needs
 
-- Assign bot manager roles carefully
+- Assign bot manager roles carefully, including admin and moderation roles
 
-- Test settings in a controlled channel first
+- Enable the features that interest you one at a time
 
 <br/>
 
 ## Troubleshooting
-- Ensure the bot has appropriate permissions
+- Ensure the bot has appropriate permissions and is above all regular roles in the role hierarchy
 
-- Check if roles/channels are properly configured
+- Confirm that the logs channel is set if using logging features
 
-- Verify logging channel is set if using logging features
+- Confirm that bot manager roles are properly assigned for moderation staff to use bot features and configure the bot
 
-- Confirm bot manager roles are properly assigned
+<br/><br/><br/>
+
+> [!IMPORTANT]  
+> BROCK Bot is in a beta release state, and is developed and maintained solely by me. This is why I don't charge a payment subscription, and instead use ADA delegation as a form of support for the project. If you notice anything regularly slipping past the bot, please report it to me on Discord `@brockcardano` so that I can fix it. If you have any feature requests, please let me know and I will do my best to implement them. The more scammer behaviour I study, the better the bot will get, but it is already at a state of high effectiveness and will significantly reduce the amount of scammer activity in your server.
