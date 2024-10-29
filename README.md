@@ -23,7 +23,7 @@ BROCK Bot provides comprehensive moderation and management features for Cardano-
 
 3. Use the `/settings` command to start enabling moderation features.
 
-4. Use the `/view`, `/add` and `/remove` commands to customize featuresettings.
+4. Use the `/view`, `/add` and `/remove` commands to customize feature settings.
 
 <br/>
 
