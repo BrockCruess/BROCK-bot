@@ -4,16 +4,16 @@
 
 ## Overview
 
-BROCK Bot provides comprehensive moderation and management features for Cardano-based Discord servers, including automated nickname filtering, file attachment filtering, advanced link filtering, channel deletion prompts for support tickets that have been closed for `n` days, and detailed event logging. Empower your moderation team to monitor your whole server from a single logs channel, and allow BROCK Bot to take on most of the workload via automated actions.
+BROCK Bot provides comprehensive moderation and management features for Cardano-based Discord servers, including automated nickname filtering, file attachment filtering, advanced link filtering, channel deletion prompts for support tickets that have been closed for *`n`* days, and detailed event logging. Empower your moderation team to monitor your whole server from a single logs channel, and allow BROCK Bot to take on most of the workload via automated actions.
 
 <br/>
 
 ## Getting Started
 
 > [!IMPORTANT]  
-> Your server must be whitelisted to use this bot. It will leave your server immediately if it is not whitelisted. There is no payment subscription to get whitelisted. Instead you must delegate at least 500k ADA to BROCK Pool. Please contact me on Discord `@brockcardano` **before** you delegate, so that I can confirm your wallet address(es) prior to the delegation going on-chain. This helps confirm your wallet ownership.
+> Your server must be whitelisted to use this bot. The bot will leave your server immediately if it is not whitelisted. There is no payment subscription to get whitelisted. Instead you must delegate at least 500k ADA to BROCK Pool. Please contact me on Discord `@brockcardano` **before** you delegate, so that I can confirm your wallet address(es) prior to the delegation going on-chain. This helps confirm your wallet ownership.
 
-#### [Invite BROCK Bot to your server](https://discord.com/oauth2/authorize?client_id=1253779179455905882)
+#### Start by [Inviting BROCK Bot to your server](https://discord.com/oauth2/authorize?client_id=1253779179455905882)
 
 ### Initial Setup
 
@@ -142,11 +142,11 @@ Add items to various lists:
 Remove items from the same lists as `/add`
 
 ### `/check_token [assetid]`
-Check if a Cardano asset ID is flagged as malicious in the [public community scam registry](https://github.com/BrockCruess/Cardano-Scam-Token-Registry).
+Check if a Cardano asset ID is flagged as malicious in the [Cardano Scam Token Registry](https://github.com/BrockCruess/Cardano-Scam-Token-Registry).
 
 <br/>
 
-## Features
+## Moderation Features
 
 ### Kick Blocked Nicknames
 When enabled:
