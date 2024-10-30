@@ -1,4 +1,4 @@
-# Discord Moderation Bot - User Documentation
+# BROCK Bot - Discord Moderation Bot: User Documentation
 
 <br/>
 
@@ -17,13 +17,23 @@ BROCK Bot provides comprehensive moderation and management features for Cardano-
 
 ### Initial Setup
 
-1. Upon joining, the bot automatically assigns bot manager permissions to all roles with administrator permissions. More bot manager roles can be added using the `/add Bot Manager Role` command.
+1. Upon joining, the bot automatically assigns bot manager permissions to all roles with administrator permissions. Bot manager roles can use all bot commands and features. More bot manager roles can be added using the `/add Bot Manager Role` command.
 
-2. Bot manager roles can use all bot commands and features and are automatically added to the Ignored Roles list to be exempt from all automated moderation actions. More ignored roles can be added using the `/add Ignored Role` command.
+2. Bot manager roles are also automatically added to the Ignored Roles list to be exempt from all automated moderation actions. More ignored roles can be added using the `/add Ignored Role` command.
 
-3. Use the `/settings` command to start enabling moderation features.
+3. Use the `/set Logs Channel` command to set your logs channel. This channel should only be visible to moderators and admins.
 
-4. Use the `/view`, `/add` and `/remove` commands to customize feature settings.
+4. If you have a support ticket channel, use the `/set Ticket Channel` command to set your support ticket channel. BROCK Bot will automatically direct users to this channel when they request help as long as the Smart Responses feature is enabled.
+
+5. Use the `/settings` command to start enabling moderation features. Recommended features to start with are:
+    - [Logs](#logs)
+    - [Action Alerts](#action-alerts)
+    - [Delete Attachments](#delete-attachments)
+    - [Delete Links](#delete-links)
+    - [Smart Responses](#smart-responses)
+    - [Flagged Users Alert Channel](#flagged-users-alert-channel)
+
+6. Use the `/view`, `/add` and `/remove` commands to customize feature settings.
 
 <br/>
 
@@ -56,6 +66,8 @@ Each setting has its own button to enable/disable:
 
 - Flagged Users Alert Channel
 
+- Smart Responses
+
 ### `/toggle [setting]`
 Quickly enable/disable individual features.
 
@@ -82,6 +94,8 @@ Available settings:
 - Minimum Account Age
 
 - Flagged Users Alert Channel
+
+- Smart Responses
 
 ### `/view [setting]`
 View current values for various settings:
@@ -112,14 +126,19 @@ View current values for various settings:
 
 - Channel Expiry Days
 
+- Smart Responses
+
 ### `/set [setting]`
 Configure specific values for:
 
-- Logs Channel (select channel for bot logs)
+- Logs Channel
 
 - Minimum Account Age (days)
 
 - Channel Expiry Days
+    - <sup>*Applies to channels within Expired Channels Categories. See [Expired Channels](#expired-channels) for more information.*</sup>
+
+- Ticket Channel
 
 ### `/add [setting]`
 Add items to various lists:
@@ -139,14 +158,44 @@ Add items to various lists:
 - Expired Channels Category
 
 ### `/remove [setting]`
-Remove items from the same lists as `/add`
+Remove items from various lists:
+
+- Blocked Nickname
+
+- Ignored Role
+
+- Ignored Category
+
+- Whitelisted URL
+
+- Whitelisted File Type
+
+- Bot Manager Role
+
+- Expired Channels Category
+
+- Ticket Channel
+    - <sup>*This will ***not*** delete your ticket channel, BROCK Bot will simply stop directing members to it.*</sup>
 
 ### `/check_token [assetid]`
-Check if a Cardano asset ID is flagged as malicious in the [Cardano Scam Token Registry](https://github.com/BrockCruess/Cardano-Scam-Token-Registry).
+Check if a Cardano asset ID (fingerprint) is flagged as malicious in the [Cardano Scam Token Registry](https://github.com/BrockCruess/Cardano-Scam-Token-Registry). Asset ID must start with `asset...`
 
 <br/>
 
 ## Moderation Features
+
+### Smart Responses
+When enabled:
+
+- Automatically responds to messages when common keywords are detected
+
+- Detect common phrases used by scammers and post a warning message in response
+
+- Detect when someone is requesting help, and direct them to your server's support ticket channel
+
+- Use `/set Ticket Channel` to define your server's support ticket channel
+
+- Reminds members of scammer activity when there's a possibility of a scam message being posted, and reminds members to use the proper channels for support
 
 ### Kick Blocked Nicknames
 When enabled:
@@ -212,7 +261,11 @@ When enabled:
 
 - Monitors specified categories for inactive channels
 
+- Add categories to monitor for expired channels using `/add Expired Channels Category`
+
 - Marks channels as expired after configured number of days
+
+- Set the number of days before a channel is marked as expired using `/set Channel Expiry Days`
 
 - Creates log entries with delete buttons for expired channels
 
