@@ -256,23 +256,6 @@ When enabled:
 
 - Most brand new accounts are scammers, and when they're instantly kicked upon joining they rarely come back later
 
-### Expired Channels
-When enabled:
-
-- Monitors specified categories for inactive channels
-
-- Add categories to monitor for expired channels using `/add Expired Channels Category`
-
-- Marks channels as expired after configured number of days
-
-- Set the number of days before a channel is marked as expired using `/set Channel Expiry Days`
-
-- Creates log entries with delete buttons for expired channels
-
-- Allows manual review and deletion of expired channels
-
-- Great for cleaning up support ticket channels that have been closed for a configured number of days
-
 ### Logs
 When enabled:
 
@@ -301,18 +284,41 @@ When enabled:
 
 <br/>
 
+## Other Features
+
+### Expired Channels
+When enabled:
+
+- Monitors specified categories for inactive channels
+
+- Add categories to monitor for expired channels using `/add Expired Channels Category`
+
+- Marks channels as expired after configured number of days
+
+- Set the number of days before a channel is marked as expired using `/set Channel Expiry Days`
+
+- Creates log entries with delete buttons for expired channels
+
+- Allows for manual review and deletion of expired channels in one spot
+
+- Discord buttons only remain functional for a few minutes, so expired buttons will be deleted and reposted to the logs channel automatically every 5 minutes
+
+- Great for cleaning up support ticket channels that have been closed for a configured number of days
+
+<br/>
+
 ## Default Settings
 BROCK Bot begins with preconfigured defaults:
 
-- Blocked nicknames: "support", "announcement"
+- Blocked nicknames: `support`, `announcement`
 
-- Whitelisted URLs: tenor.com, imgflip.com, twitter.com, x.com, wikipedia.org
+- Whitelisted URLs: `tenor.com`, `imgflip.com`, `twitter.com`, `x.com`, `wikipedia.org`
 
-- Whitelisted file types: .png, .jpg, .jpeg, .gif, .txt, .log
+- Whitelisted file types: `.png`, `.jpg`, `.jpeg`, `.gif`, `.txt`, `.log`
 
-- Minimum account age: 30 days
+- Minimum account age: `30` days
 
-- Channel expiry: 7 days
+- Channel expiry: `7` days
 
 - All moderation features are disabled by default
 
@@ -337,6 +343,8 @@ BROCK Bot begins with preconfigured defaults:
 - Confirm that the logs channel is set if using logging features
 
 - Confirm that bot manager roles are properly assigned for moderation staff to use bot features and configure the bot
+
+- "This interaction failed" errors are usually client-side. Restarting your Discord client usually resolves the issue.
 
 <br/><br/><br/>
 
