@@ -1,8 +1,10 @@
 # BROCK Bot - Discord Moderation Bot: User Documentation
 
+<img align="right" src="https://github.com/user-attachments/assets/9e927405-a0f0-4ae2-81e5-d3c383214ef4" width="300">
+
 <br/>
 
-## Overview
+### Overview
 
 BROCK Bot provides comprehensive moderation and management features for Cardano-based Discord servers, including automated nickname filtering, file attachment filtering, advanced link filtering, channel deletion prompts for support tickets that have been closed for *`n`* days, and detailed event logging. Empower your moderation team to monitor your whole server from a single logs channel, and allow BROCK Bot to take on most of the workload via automated actions.
 
