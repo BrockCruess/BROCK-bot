@@ -31,6 +31,7 @@ BROCK Bot provides comprehensive moderation and management features for Cardano-
     - [Logs](#logs)
     - [Action Alerts](#action-alerts)
     - [Delete Attachments](#delete-attachments)
+    - [Delete Server Invites](#delete-server-invites)
     - [Delete Links](#delete-links)
     - [Smart Responses](#smart-responses)
     - [Flagged Users Alert Channel](#flagged-users-alert-channel)
@@ -58,9 +59,11 @@ Each setting has its own button to enable/disable:
 
 - Delete Attachments
 
-- Kick Unverified Users
+- Delete Server Invites
 
 - Delete Links
+
+- Kick Unverified Users
 
 - Action Alerts
 
@@ -79,9 +82,11 @@ Available settings:
 
 - Delete Attachments
 
-- Kick Unverified Users
+- Delete Server Invites
 
 - Delete Links
+
+- Kick Unverified Users
 
 - Expired Channels
 
@@ -130,6 +135,10 @@ View current values for various settings:
 
 - Smart Responses
 
+- Activity Roles
+
+- Boost Announcement Channel
+
 ### `/set [setting]`
 Configure specific values for:
 
@@ -141,6 +150,8 @@ Configure specific values for:
     - <sup>*Applies to channels within Expired Channels Categories. See [Expired Channels](#expired-channels) for more information.*</sup>
 
 - Ticket Channel
+
+- Boost Announcement Channel
 
 ### `/add [setting]`
 Add items to various lists:
@@ -158,6 +169,8 @@ Add items to various lists:
 - Bot Manager Role
 
 - Expired Channels Category
+
+- Activity Role
 
 ### `/remove [setting]`
 Remove items from various lists:
@@ -178,6 +191,10 @@ Remove items from various lists:
 
 - Ticket Channel
     - <sup>*This will ***not*** delete your ticket channel, BROCK Bot will simply stop directing members to it.*</sup>
+
+- Activity Role
+
+- Boost Announcement Channel
 
 ### `/check_token [assetid]`
 Check if a Cardano asset ID (fingerprint) is flagged as malicious in the [Cardano Scam Token Registry](https://github.com/BrockCruess/Cardano-Scam-Token-Registry). Asset ID must start with `asset...`
@@ -224,6 +241,13 @@ When enabled:
 - Logs deleted attachment names if logging is enabled
 
 - Whitelisting media-based file extensions (.jpg, .png, .gif, etc.) and relevant file type requirements for technical support (.log files for example) allows your community to safely share media and also share relevant files with support staff while blocking malicious files from being shared
+
+### Delete Server Invites
+When enabled:
+
+- Automatically deletes messages containing external server invites
+
+- Logs deleted server invites if logging is enabled
 
 ### Delete Links
 When enabled:
@@ -288,6 +312,12 @@ When enabled:
 
 ## Other Features
 
+### Nitro Boost Announcements
+
+- Announces when a server member boosts the server
+
+- Allows specifying a channel for boost announcements so that they are visible to all members
+
 ### Expired Channels
 When enabled:
 
@@ -306,6 +336,12 @@ When enabled:
 - Discord buttons only remain functional for a few minutes, so expired buttons will be deleted and reposted to the logs channel automatically every 5 minutes
 
 - Great for cleaning up support ticket channels that have been closed for a configured number of days
+
+### Activity Roles
+
+- Assigns specific roles to users based on their activity in the server
+
+- Configurable activity thresholds for each role
 
 <br/>
 
