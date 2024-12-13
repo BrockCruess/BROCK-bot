@@ -197,10 +197,10 @@ Remove items from various lists:
 - Boost Announcement Channel
 
 ### `/flag [user_id]`
-Flag a user as a scammer. This will prompt other servers to ban the user.
+Flag a user as a scammer and ban them in all servers that use BROCK Bot.
 
 ### `/unflag [user_id]`
-Unflag a user as a scammer, in case a user was mistakenly flagged. This will prompt other servers to unban the user.
+Unflag a user as a scammer and unban them in all servers that use BROCK Bot. To be used if a user was mistakenly flagged.
 
 ### `/check_token [assetid]`
 Check if a Cardano asset ID (fingerprint) is flagged as malicious in the [Cardano Scam Token Registry](https://github.com/BrockCruess/Cardano-Scam-Token-Registry). Asset ID must start with `asset...`
