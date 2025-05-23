@@ -104,36 +104,46 @@ Available settings:
 
 - Smart Responses
 
+- Activity Roles
+
+- Boost Announcements
+
 ### `/view [setting]`
 View current values for various settings:
 
+- Logs
+
 - Logs Channel
 
-- Logs Status
+- Ticket Channel
 
-- Log Deleted Messages Status
+- Log Deleted Messages
 
-- Log Kicks and Bans Status
+- Log Kicks and Bans
 
 - Minimum Account Age
 
-- Blocked Nicknames List
+- Blocked Nicknames
 
-- Ignored Roles List
+- Ignored Roles
 
-- Ignored Categories List
+- Ignored Categories
 
-- Whitelisted URLs List
+- Whitelisted URLs
 
-- Whitelisted File Types List
+- Whitelisted File Types
 
-- Bot Manager Roles List
+- Bot Manager Roles
 
-- Expired Channels Categories List
+- Expired Channels Categories
 
 - Channel Expiry Days
 
+- Flagged Users Alert Channel
+
 - Smart Responses
+
+- Proxy Bot
 
 - Activity Roles
 
@@ -144,12 +154,14 @@ Configure specific values for:
 
 - Logs Channel
 
+- Ticket Channel
+
 - Minimum Account Age (days)
 
 - Channel Expiry Days
     - <sup>*Applies to channels within Expired Channels Categories. See [Expired Channels](#expired-channels) for more information.*</sup>
 
-- Ticket Channel
+- Proxy Bot
 
 - Boost Announcement Channel
 
@@ -189,6 +201,8 @@ Remove items from various lists:
 
 - Expired Channels Category
 
+- Proxy Bot
+
 - Ticket Channel
     - <sup>*This will ***not*** delete your ticket channel, BROCK Bot will simply stop directing members to it.*</sup>
 
@@ -202,8 +216,20 @@ Flag a user as a scammer and ban them in all servers that use BROCK Bot.
 ### `/unflag [user_id]`
 Unflag a user as a scammer and unban them in all servers that use BROCK Bot. To be used if a user was mistakenly flagged.
 
+### `/permit [user_id]`
+Temporarily permit a new or existing user account to bypass certain automated checks (like minimum account age or blocked nickname) for 24 hours. This is useful for allowing legitimate new users who might otherwise be caught by filters.
+- `user_id`: The ID of the user to permit.
+
 ### `/check_token [assetid]`
 Check if a Cardano asset ID (fingerprint) is flagged as malicious in the [Cardano Scam Token Registry](https://github.com/BrockCruess/Cardano-Scam-Token-Registry). Asset ID must start with `asset...`
+
+### `/remind [time] [user (optional)] [message (optional)]`
+Set a reminder.
+- `time`: Specify the duration until the reminder (e.g., "30m", "1h", "1h 30m"). Maximum 24 days.
+- `user`: (Optional) Mention a user to remind. Defaults to the command user.
+- `message`: (Optional) A custom message for the reminder (max 200 characters). Default: "This is your reminder!"
+
+The bot will send a DM to the target user after the specified time. If the target user posts any message in the channel where the reminder was set *after* the reminder was set but *before* it's due, the reminder will be automatically cancelled and removed.
 
 <br/>
 
@@ -334,7 +360,6 @@ When enabled:
 - Marks channels as expired after configured number of days
 
 - Set the number of days before a channel is marked as expired using `/set Channel Expiry Days`
-
 - Creates log entries with delete buttons for expired channels
 
 - Allows for manual review and deletion of expired channels in one spot
@@ -394,3 +419,4 @@ BROCK Bot begins with preconfigured defaults:
 
 > [!IMPORTANT]  
 > BROCK Bot is in a beta release state, and is developed and maintained solely by me. This is why I don't charge a payment subscription, and instead use ADA delegation as a form of support for the project. If you notice anything regularly slipping past the bot, please report it to me on Discord `@brockcardano` so that I can fix it. If you have any feature requests, please let me know and I will do my best to implement them. The more scammer behaviour I study, the better the bot will get, but it is already at a state of high effectiveness and will significantly reduce the amount of scammer activity in your server.
+
