@@ -13,9 +13,9 @@ BROCK Bot provides comprehensive moderation and management features for Cardano-
 ## Getting Started
 
 > [!IMPORTANT]  
-> Your server must be whitelisted to use this bot. The bot will leave your server immediately if it is not whitelisted. There is no payment subscription to get whitelisted. Instead you must delegate at least 250k ADA to BROCK Pool. Please contact me on Discord `@brockcardano` **before** you delegate, so that I can confirm your wallet address(es) prior to the delegation going on-chain. This helps confirm your wallet ownership.
+> Your server must have an active paid subscription to use this bot. The bot will leave your server immediately if no subscription is active. Please purchase a subscription for at least 1 month [here](https://brock.tools/subscribe) to get started. Anyone is able to top-up the subscription for any server at any time, so you may request that a few of your server members occasionally contribute a month or two of top-up whenever they can to help keep your server safe and their experience within your server enjoyable.
 
-#### Start by [Inviting BROCK Bot to your server](https://discord.com/oauth2/authorize?client_id=1253779179455905882)
+#### Once a subscription is active for your server, start by [Inviting BROCK Bot to your server](https://discord.com/oauth2/authorize?client_id=1253779179455905882)
 
 ### Initial Setup
 
