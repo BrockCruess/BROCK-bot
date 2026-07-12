@@ -49,7 +49,7 @@ BROCK Bot provides comprehensive moderation and management features for Cardano-
 
 8. **Ban known scammers** - Run **`/syncbans`** once after setup to ban every user on the public flagged-users list in your server.
 
-9. **Token-gated roles (optional, Cardano servers)** - Use **`/add Token Role`** to map a token policy to a Discord role. Members link wallets with **`/verify`** and receive roles automatically based on what they hold.
+9. **Token-gated roles (optional, Cardano servers)** - Use **`/add Token Role`** to map a token policy to a Discord role. Members link wallets with **`/link`** and receive roles automatically based on what they hold.
 
 <br/>
 
@@ -253,8 +253,8 @@ Post a verify button in the current channel. Opens a modal asking for the **Role
 
 Requires bot manager permission. The bot's role must be above the role being granted.
 
-### `/verify`
-Link a Cardano wallet to your Discord account. The bot replies with a private, expiring link to the verification page, where you connect and sign with your wallet (no funds are ever moved). Once verified, you'll automatically receive any [token-gated roles](#wallet-verification--token-gated-roles) you qualify for. Running `/verify` again lets you link additional wallets.
+### `/link`
+Link a Cardano wallet to your Discord account. The bot replies with a private, expiring link to the verification page, where you connect and sign with your wallet (no funds are ever moved). Once verified, you'll automatically receive any [token-gated roles](#wallet-verification--token-gated-roles) you qualify for. Running `/link` again lets you link additional wallets.
 
 ### `/unlink`
 Remove a linked Cardano wallet from your account. Presents a menu of your linked wallets to choose from. Any token-gated roles that depended on the removed wallet will be revoked on the next sync.
@@ -397,7 +397,7 @@ When enabled:
 
 ### Wallet Verification & Token-Gated Roles
 
-- Lets members link their Cardano wallet to their Discord account with the `/verify` command, then grants roles automatically based on the tokens they hold
+- Lets members link their Cardano wallet to their Discord account with the `/link` command, then grants roles automatically based on the tokens they hold
 
 - Verification happens on a secure external page where the member connects and signs with their wallet; signing only proves ownership and never moves any funds
 
