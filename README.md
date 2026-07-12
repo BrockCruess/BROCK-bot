@@ -13,7 +13,7 @@ BROCK Bot provides comprehensive moderation and management features for Cardano-
 ## Getting Started
 
 > [!IMPORTANT]  
-> Your server must have an active paid subscription to use this bot. The bot will leave immediately if no subscription is active. Purchase at least one month [here](https://brock.tools/subscribe) before inviting the bot. Anyone can top up any server's subscription at any time - once the bot is installed, use `/pay` to check days remaining or get a top-up link.
+> Your server must have an active paid subscription to use this bot. The bot will leave immediately if no subscription is active. Purchase at least one month [here](https://brock.tools/brock-bot?subscribe) before inviting the bot. Anyone can top up any server's subscription at any time - once the bot is installed, use `/pay` to check days remaining or get a top-up link.
 
 #### Once a subscription is active, [invite BROCK Bot to your server](https://discord.com/oauth2/authorize?client_id=1253779179455905882)
 
